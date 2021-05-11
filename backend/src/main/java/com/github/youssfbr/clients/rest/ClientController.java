@@ -4,6 +4,9 @@ import com.github.youssfbr.clients.model.entities.Client;
 import com.github.youssfbr.clients.model.repositories.ClientRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/clients")
@@ -13,6 +16,12 @@ public class ClientController {
 
     public ClientController(final ClientRepository repository) {
         this.repository = repository;
+    }
+
+    @GetMapping("/{id}")
+    public Client findById(@PathVariable Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
