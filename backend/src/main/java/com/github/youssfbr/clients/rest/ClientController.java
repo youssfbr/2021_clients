@@ -35,7 +35,8 @@ public class ClientController {
         return repository
                 .findById(id)
                 .map(client -> {
-                    updateClient.setId(client.getId());
+                    client.setName(updateClient.getName());
+                    client.setCpf(updateClient.getCpf());
                     return repository.save(updateClient);
                 })
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
