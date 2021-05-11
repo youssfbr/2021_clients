@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -26,12 +27,12 @@ public class ClientController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Client save(@RequestBody Client client) {
+    public Client save(@Valid @RequestBody Client client) {
         return repository.save(client);
     }
 
     @PutMapping("{id}")
-    public Client update(@PathVariable long id, @RequestBody Client updateClient) {
+    public Client update(@PathVariable long id, @Valid @RequestBody Client updateClient) {
         return repository
                 .findById(id)
                 .map(client -> {
