@@ -29,4 +29,16 @@ public class ClientController {
     public Client save(@RequestBody Client client) {
         return repository.save(client);
     }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        repository
+               .findById(id)
+                .map( client -> {
+                    repository.delete(client);
+                    return Void.TYPE;
+                })
+               .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
 }
