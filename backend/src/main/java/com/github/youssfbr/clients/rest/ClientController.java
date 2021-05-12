@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,6 +18,11 @@ public class ClientController {
 
     public ClientController(final ClientRepository repository) {
         this.repository = repository;
+    }
+
+    @GetMapping
+    public List<Client> findAll() {
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
