@@ -22,12 +22,12 @@ public class Client {
     private Long id;
 
     @Column(nullable = false, length = 150)
-    @NotEmpty
+    @NotEmpty(message = "{name.required}")
     private String name;
 
     @Column(nullable = false, length = 11)
-    @NotNull
-    @CPF
+    @NotNull(message = "{cpf.required}")
+    @CPF(message = "{cpf.invalid}")
     private String cpf;
 
     @Column(name = "date_register", updatable = false)
