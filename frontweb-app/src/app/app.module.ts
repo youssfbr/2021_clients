@@ -1,3 +1,4 @@
+import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FontAwesomeModule,
     ClientsModule,
-    TemplateModule
+    TemplateModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
