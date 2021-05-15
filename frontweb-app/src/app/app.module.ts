@@ -6,15 +6,14 @@ import { TemplateModule } from './template/template.module';
 import { AppComponent } from './app.component';
 
 import { ClientsModule } from './clients/clients.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
+    AppRoutingModule,    
     ClientsModule,
     TemplateModule    
   ],
