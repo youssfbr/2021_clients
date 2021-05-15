@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { TemplateModule } from './template/template.module';
 import { AppComponent } from './app.component';
 
 import { ClientsModule } from './clients/clients.module';
@@ -12,8 +13,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
     ClientsModule,
-    FontAwesomeModule
+    TemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
