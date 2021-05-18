@@ -3,42 +3,65 @@
   <li class="breadcrumb-item active">Cadastro</li>
 </ol>
 <div>
-    <form>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="">Id:</label>
-                    <input type="text" class="form-control" disabled />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="">Data Cadastro:</label>
-                    <input type="text" class="form-control" disabled />
-                </div>
-            </div>
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Id:</label>
+          <input
+            type="text"
+            class="form-control"
+            [ngModel]="client.id"
+            name="id"
+            disabled
+          />
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="">Nome: *</label>
-                    <input type="text" class="form-control" />
-                </div>                
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="">CPF: *</label>
-                    <input type="text" class="form-control" />
-                </div>                
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Data Cadastro:</label>
+          <input
+            type="text"
+            class="form-control"
+            [ngModel]="client.dateRegister"
+            name="dateRegister"
+            disabled
+          />
         </div>
-        <div class="row">
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa fa-save" ></i> Salvar
-                </button>
-
-            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">Nome: *</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="client.name"
+            name="name"
+            id="name"
+          />
         </div>
-    </form>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cpf">CPF: *</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="client.cpf"
+            name="cpf"
+            id="cpf"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success" (click)="click()">
+          <i class="fa fa-save"></i> Salvar
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
